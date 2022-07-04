@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_dataType3.html</title>
+</head>
+<body>
+    <h1>javascript 데이터 type</h1>
+    <script>
+        /*
+        한명의 회원 정보라고 가정
+        번호, 이름, 남자인지 여부
+        1, 김구라, true
+        */
+       let num=1; //number type
+       let name="김구라"; //string type
+       let isMale=true; //boolean type
+       
+       //하나의 변수명으로 여러 개를 한꺼번에 관리할 수 없나?
+
+       let mem1={num:1, name:'김구라',isMale:true};//object type
+       //{ key:value, key2:value2, ...};
+       //특정 key 값에 value값을 지정해서 관리.
+       mem1.name; //=김구라
+       //obj.key 를 입력하면 대응하는 값이 나옴. 
+
+       let a=mem1; //a는 object type.
+       let b=mem1.num; //b는 number type.
+       let c=mem1.name; //c는 string type.
+       let d=mem1.isMale; //d는 boolean type.
+       //mem1에 있는 object type 값을 a에 복사.
+
+    </script>
+</body>
+</html>
