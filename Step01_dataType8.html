@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_dataType8.html</title>
+</head>
+<body>
+    <h1>javascript data type</h1>
+    <script>
+        /*
+            함수 호출의 목적
+            1. 어떤 동작을 하기 위해.
+            2. 어떤 값을 받아오기 위해. 
+        */
+
+        console.log("javascript는 로딩 중.")
+        //console 또한 built-in 오브젝트이다. console.log도 alert처럼 built-in
+
+        //1번 예) 원숭이를 냉장고에 넣는 함수.
+        let pushMonkey=function(){
+            console.log("pushMonkey 함수 작동 시작.")
+            console.log("냉장고를 연다");
+            console.log("원숭이를 넣는다");
+            console.log("냉장고를 닫는다");
+        };
+
+        //2번 예)
+        let getFortune=()=>{
+            //어떤 복잡한 과정을 통해 오늘의 운세를 얻었다고 가정하자.
+            let fortune="동쪽으로 가면 귀인을 만나요";
+            //return이라는 예약어를 이용해서 string type 데이터를 함수를 호출한 그 위치로 되돌려준다.
+            return fortune;
+        };
+
+        //원숭이를 냉장고에 넣기.
+        pushMonkey(); //여기서 반환되는 값은 undefined.(return값이 없으니.실행 결과와 반환값은 다름!)
+
+        //오늘의 운세를 받아와서 fortuneToday 라는 변수에 담기.
+        let fortuneToday=getFortune();
+        console.log("javascript 로딩 종료.")
+    </script>
+</body>
+</html>
