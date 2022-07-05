@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_dataType6.html</title>
+</head>
+<body>
+    <h1>javascript data type</h1>
+    <button onclick="//여기도 자바스크립트 영역임. 또한 global 영역임.
+                    f1()">눌러보세요</button>
+    <script>
+        /*
+        특정 시점에 일괄 실행할 javascript를 미리 준비해 놓기 위해서는 function type data가 필요.
+        
+            function() {
+            ...
+            }
+
+        */
+        let f1=function() { //function type date를 만들어서 f1이라는 이름의 변수에 대입.
+            console.log("하나");
+            console.log("둘");
+            console.log("세엣");
+            alert("강녕");
+        }; 
+        //그냥 f1이라고 콘솔창에 치면 함수를 참조하기만 함. 안의 내용만 주루룩 나옴. ()을 붙어야 한다.
+        //f1()에서 ()은 호출 기능을 수행. call의 의미는 function 안의 자바스크립트를 호출 시 수행하는 것.
+
+        let f2=f1; //f1안에 단순히 들어있는 값을 참조하여 f2에 대입.
+        let result = f1(); //f1을 호출하여 실행한 값을 result에 대입.
+        //alert() 처럼 기본으로 제공하는 함수를 built-in 함수라고 함.
+    </script>
+</body>
+</html>

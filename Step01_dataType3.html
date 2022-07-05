@@ -18,11 +18,20 @@
        let name="김구라"; //string type
        let isMale=true; //boolean type
        
-       //하나의 변수명으로 여러 개를 한꺼번에 관리할 수 없나?
+       /*
+       object type으로 여러개의 데이터를 하나의 묶음으로 관리할 수 있다.
+       let obj={key:value, key2:value2, ...};
+       특정 key 값에 value값을 지정해서 관리.
+       */
 
-       let mem1={num:1, name:'김구라',isMale:true};//object type
-       //{ key:value, key2:value2, ...};
-       //특정 key 값에 value값을 지정해서 관리.
+       let mem1={num:1, name:'김구라', isMale:true};
+       let mem2={num:1, name:'김구라', isMale:true};
+       /*
+       (참고) mem1 == mem2 의 값은 false 이다. 자세한 설명은 
+       */
+       let mem3={num:num, name:name, isMale:isMale}; //object의 의 특정 key의 value 값으로 변수명을 참조하여 넣을 수도 있음.
+       let mem4={num, name, isMale}; //mem3을 축약해서 이렇게 만들 수도 있다. (단, 이미 변수가 선언되어 있다는 가정 하에)
+
        mem1.name; //=김구라
        //obj.key 를 입력하면 대응하는 값이 나옴. 
 
@@ -31,6 +40,17 @@
        let c=mem1.name; //c는 string type.
        let d=mem1.isMale; //d는 boolean type.
        //mem1에 있는 object type 값을 a에 복사.
+        
+
+       mem2.num=2;
+       mem2.name="해골";
+       mem2.isMale=false;
+
+       //빈 object를 먼저 만들고 나중에 필요에 따라 key를 추가할 수도 있음.
+       let mem5={};
+       mem5.num=3;
+       mem5.name="원숭이";
+       mem5.isMale=true;
 
     </script>
 </body>
