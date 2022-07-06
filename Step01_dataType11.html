@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_dataType11.html</title>
+</head>
+<body>
+    <h1>javascript data type</h1>
+    <button onclick="remove()">삭제</button>
+    <button onclick="input()">입력</button>
+    <button onclick="print()">입력한 내용 출력하기</button>
+    <script> //global area
+
+        let msg;
+
+        function remove() { //Local area
+            let isDelete=confirm("삭제하시겠습니까?");
+            if(isDelete){ //if문
+                console.log("삭제합니다.");
+            }
+        }
+        //함수 안(지역Local)에서 만들어진 변수(지역변수Local Variale)는 바깥쪽(전역Global)에서 참조할 수 없다. 캡슐이라고 생각하자.
+        //로컬변수는 그 로컬 에이리어 안에서만 사용이 가능하다.
+
+        function input() {
+            //global area에 만들어진 변수에 입력한 문자열을 저장.
+            msg=prompt("메세지를 입력하세요");
+        }
+
+        function print() {
+            //global 영역에 만들어진 변수에 있는 값을 참조해서 작업.
+            console.log(msg);
+        }
+
+    </script>
+</body>
+</html>
