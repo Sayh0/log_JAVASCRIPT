@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_example.html</title>
+</head>
+<body>
+    <!-- p{p$5입니다}-->
+    <p>p1입니다</p>
+    <p id="one" class="my_class">p2입니다</p>
+    <p id="two" class="my_class">p3입니다</p>
+    <p id="three" class="my_class">p4입니다</p>
+    <!--
+        document.querySelectorAll("p")[3].innerText
+        참조값을 얻어온다
+        document.querySelectorAll("p")[3].innerText="김철수"
+        얻어온 참조값으로 콘솔창에서 텍스트를 수정할 수 있다.
+
+        콘솔창에서
+        > document.querySelectorAll(".my_class")
+        < NodeList(3) [p#one.my_class, p#two.my_class, p#three.my_class]
+        이렇게 앞에서 배운 id와 class 로도 찾을 수 있다.
+    -->
+    <p>p5입니다</p>
+
+    <!--버튼을 누르면 텍스트를 바꿔주는 프로그램-->
+    <button onclick="changer()">바꾸기</button>
+    <script>
+        function changer() {
+            document.querySelectorAll("p")[0].innerText="유재석";
+        }
+    </script>
+
+    <!--하나더 해보기-->
+    <button onclick="changer2()">골라 바꾸기</button>
+    <script>
+        function changer2() {
+            let num, what;
+            num = prompt("몇번을 바꿀래요?");
+            what = prompt("뭐라고 바꿀래요?");
+            document.querySelectorAll("p")[num/*몇번*/].innerText=what/*뭐라고*/;
+        }
+    </script>
+
+
+</body>
+</html>

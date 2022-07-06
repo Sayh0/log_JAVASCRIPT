@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_example03.html</title>
+</head>
+<body>
+    <input type="text" id="num1">
+    <button onclick="plus()">+</button>
+    <button onclick="minus()">-</button>
+    <input type="text" id="num2">
+    <span>=<span>
+    <span id="result"></span>
+    <script>
+
+        function plus() {
+            let num1 = document.querySelector("#num1").value;
+            //str으로 저장해버린다. num 아 아니라.
+            let num2 = document.querySelector("#num2").value;
+            let res = Number(num1) + Number(num2);
+            /*
+                str 타입으로 + 연산을 하면 연결연산이 되버린다.
+                Number 함수를 이용해서 numType으로 바꿔주자.
+            */
+            document.querySelector("#result").innerText = res;
+        }
+        function minus() {
+            let num1 = document.querySelector("#num1").value;
+            let num2 = document.querySelector("#num2").value;
+            let res = +num1 - +num2;
+            /*
+            +는 numType으로 변수를 변환해주는 단항연산자로도 기능한다.
+            +가 없어도, - 는 산술연산자로밖에 기능하지 않기 때문에
+            알아서 num1과 num2를 numType으로 변환하기에 작동은 가능하다.
+            */
+            document.querySelector("#result").innerText = res;
+        }
+    </script>
+</body>
+</html>
+
+<!--
+    자바스크립트는 왜 이렇게 근본이 없나?
+    웹은 하도 지랄맞은 상황이 많기 때문에
+    자바스크립트는 웬만한 것에 다 대응한다.
+-->

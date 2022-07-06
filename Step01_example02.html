@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="one">
+    <button onclick="send()">보내기</button>
+    <button onclick="clearAll()">삭제하기</button>
+
+    <p id="two"></p>
+    <script>
+        /*
+        input 요소에 문자열을 입력 후 보내기 버튼을 누르면
+        1. input 요소에 입력된 value는 msg에 담기고
+        2. id가 two인 p 요소의 innerText에 대입됨.
+        */
+        let msg;
+        function send() {
+            msg = document.querySelector("#one").value;
+            document.querySelector("#two").innerText=msg;
+            //(참고) value와 innerText는 혼동을 많이 하므로 주의한다.
+
+        }
+        function clearAll() {
+            document.querySelector("#one").value="";
+            send();
+        }
+
+    </script>
+
+
+
+</body>
+</html>
