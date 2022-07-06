@@ -11,38 +11,57 @@
     <div class="container">
         <table border = "1">
             <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-                <td><button onclick="minus()">-</button></td>
+                <td colspan="5">
+                    <p id="resBlk"></p>   
+                </td>
+            </tr>
+            <tr>
+                <td>log</td>
+                <td></td>
+                <td><button class = "operator" onclick="divide()">/</button></td>
+                <td><button class = "operator" onclick="multiple()">*</button></td>
+                <td><button class = "operator" onclick="minus()">-</button></td>
             </td>
             <tr>
-                <td>5</td>
-                <td>6</td>
-                <td>7</td>
-                <td>8</td>
-                <td rowspan="2"><button onclick="plus()">+</button></td>
+                <td rowspan="4"></td>
+                <td><button class = "number" onclick="seven()">7</button></td>
+                <td><button class = "number" onclick="eight()">8</button></td>
+                <td><button class = "number" onclick="nine()">9</button></td>
+                <td rowspan="2"><button class = "operator" onclick="plus()">+</button></td>
             </td>
             <tr>
-                <td>9</td>
-                <td>0</td>
-                <td>1</td>
-                <td>2</td>
+                <td><button class = "number" onclick="four()">4</button></td>
+                <td><button class = "number" onclick="five()">5</button></td>
+                <td><button class = "number" onclick="six()">6</button></td>
             </td>
             <tr>
-                <td></td>
-                <td></td>
-                <td>5</td>
-                <td></td>
+                <td><button class = "number" onclick="one()">1</button></td>
+                <td><button class = "number" onclick="two()">2</button></td>
+                <td><button class = "number" onclick="three()">3</button></td>
                 <td rowspan="2"><button onclick="enter()">=</button></td>
             </td>
             <tr>
-                <td colspan="3"><button onabort="0()">0</button></td>
-                <td></td>
-                <td>Del</td>
+                <td colspan="2"><button onabort="0()">0</button></td>
+                <td><button onclick="del()">Del</button></td>
             </td>
         </table>
     </div>
+    <script>
+        let initNum = 0;
+        var tempNum1, tempNum2;
+        initNum = Number(initNum);
+        tempNum1 = Number(tempNum1);
+        tempNum2 = Number(tempNum2);
+        document.querySelector("#resBlk").innerText = initNum;
+        function one() {
+            tempNum1 = 1;
+        }
+        function two() {
+            tempNum2 = 2;
+        }
+        function plus() {
+            
+        }
+    </script>
 </body>
 </html>
