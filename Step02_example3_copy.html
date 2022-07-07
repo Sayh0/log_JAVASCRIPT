@@ -15,9 +15,14 @@
     <script>
         document.querySelector("#howMany")/addEventListener("click",function(){
             let num = document.querySelector("#howManyDiv").value;
-            console.log(num);
+            console.log(num); //입력값을 잘 받아왔는지 확인
             for(let i=0;i<num;i++) {
                 document.querySelector("#result").innerText=num;
+                console.log(i); // 실제로 잘 돌고 있는지 확인
+                for(let j=0; j<=i; j++)
+                {
+                    //뭔가 출력해주는 함수.
+                };
             };
     });
     </script>
