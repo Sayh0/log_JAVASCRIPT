@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example3.html</title>
+</head>
+<body>
+    <div>몇개 만들래?</div>
+    <input type="text" id="howManyDiv">
+    <button id="houMany">만들기</button>
+    <br>
+    <div id="result">결과</div>
+    <script>
+        document.querySelector("#howMany")/addEventListener("click",function(){
+            let num = document.querySelector("#howManyDiv").value;
+            console.log(num);
+            for(let i=0;i<num;i++) {
+                document.querySelector("#result").innerText=num;
+            };
+    });
+    </script>
+    <button id="changeBtn">바꾸기</button> 
+    <script>
+        document.querySelector("#changeBtn").addEventListener("click",function(){
+            for(let i=0;i<20;i++) {
+                i =Number(i);
+                document.querySelectorAll("div")[i].innerText="쟈쟈쟌?"; 
+                console.log("반복문 "+(i+1)+"번 실행");
+            }
+       })
+       
+    </script>
+
+    
+</body>
+</html>

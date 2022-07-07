@@ -48,19 +48,44 @@
     </div>
     <script>
         let initNum = 0;
-        var tempNum1, tempNum2;
+        var tempNum1 = ""; 
+        var tempNum2 = "";
+        let operator = 0;
         initNum = Number(initNum);
         tempNum1 = Number(tempNum1);
         tempNum2 = Number(tempNum2);
         document.querySelector("#resBlk").innerText = initNum;
         function one() {
-            tempNum1 = 1;
+            if(tempNum1 =="") {
+                tempNum1 = 1;
+                document.querySelector("#resBlk").innerText = tempNum1;
+            } else {
+                tempNum2 =1;
+                document.querySelector("#resBlk").innerText = tempNum2;
+            }
         }
         function two() {
-            tempNum2 = 2;
+            if(tempNum1 =="") {
+                tempNum1 = 2;
+                document.querySelector("#resBlk").innerText = tempNum1;
+
+            } else {
+                tempNum2 =2;
+                document.querySelector("#resBlk").innerText = tempNum2;
+            }
         }
         function plus() {
-            
+            operator = plusOp;
+        }
+        function enter() {
+            switch (operator) {
+                case plusOp : res = tempNum1 + tempNum2;
+                document.querySelector("#resBlk").innerText=res;
+                tempNum1 = "";
+                tempNum2 = "";
+                break;
+            }
+
         }
     </script>
 </body>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_event.html</title>
+    <style>
+        /*내부 css*/
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid rebeccapurple; /*경계선*/
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">box</div>
+    <div class="box" style="border: 1px solid red;">box2</div>
+    <!--width: 100px; height: 100px; 안 써도 적용되어 있음-->
+    <!--
+        css를 적욯할 요소에 style 속성을 이용하여 직접 css를 작성할 수도 있다.
+        이런 css를 인라인 css라고 한다.
+        인라인 css는 내부 css보다 우선한다.(오버라이딩 가능!)
+    -->
+    <div id="myDiv">box</div>
+    <div id="yourDiv">box</div>
+    <script>
+        //id가 myDiv인 요소의 참조값을 찾아서 div1이라는 변수에 담아 놓기.
+        let div1=document.querySelector("#myDiv");
+        /*
+            원래 css에서는 background-color지만 - 는 자바스크립트에서 연산자로 해석한다.
+            그렇기 때문에 여러 단어로 조합된 css property는
+            하이픈(-) 대신 다음 단어의 첫글자를 대문자로 바꿔준다.
+        */
+        div1.style.width="100px";
+        div1.style.height="100px";
+
+        document.querySelector("#myDiv").style.width="100px";
+
+        document.querySelector("#yourDiv").style.height="100px";
+        //div1으로 담아두고 하지 않아도 가능
+    </script>
+</body>
+</html>
+

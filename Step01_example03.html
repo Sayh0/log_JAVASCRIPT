@@ -18,6 +18,7 @@
         function plus() {
             let num1 = document.querySelector("#num1").value;
             //str으로 저장해버린다. num 아 아니라.
+            //(참고)getElementbyId 는 옛날 거다. 성능 떨어지니까 querySelector 쓰자.
             let num2 = document.querySelector("#num2").value;
             let res = Number(num1) + Number(num2);
             /*
@@ -29,6 +30,8 @@
         function minus() {
             let num1 = document.querySelector("#num1").value;
             let num2 = document.querySelector("#num2").value;
+            //이 코드는 plus랑 중복이니까, 전역으로 빼버릴까? 하고 빼버리면 작동 안됨.
+            //페이지 로딩 직후시점의 값을 긁어오기 때문에 아무것도 없는 값을 긁어오기 때문.
             let res = +num1 - +num2;
             /*
             +는 numType으로 변수를 변환해주는 단항연산자로도 기능한다.
