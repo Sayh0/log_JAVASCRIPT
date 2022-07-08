@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example06.html</title>
+    <style>
+        .kim{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+        .kim:hover{
+            cursor: pointer;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/kim1.png" class="kim">
+    <img src="images/kim1.png" class="kim">
+    <img src="images/kim1.png" class="kim">
+    <img src="images/kim1.png" class="kim">
+    <img src="images/kim1.png" class="kim">
+    <script>
+        /*
+            클릭한 이미지의 width와 height를 각각 150으로 변경
+        */
+        let imgs=document.querySelectorAll(" .kim");
+        for(let i=0;i<imgs.length;i++){
+            let temp = 0;
+            imgs[i].addEventListener("click",function(){
+                if(temp == 0) {
+                imgs[i].style.width=150+"px";
+                imgs[i].style.height=150+"px";
+                temp = 1;
+                } else {
+                imgs[i].style.width=100+"px";
+                imgs[i].style.height=100+"px";
+                temp = 0;
+                }
+                // imas[i].addEventListener("",function(){
+                //     imgs[i].style.width=100+"px";
+                //     imgs[i].style.height=100+"px";
+                // })            
+            })
+        }
+
+    </script>
+</body>
+</html>

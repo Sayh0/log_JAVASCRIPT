@@ -27,10 +27,13 @@
     <div>div18</div>
     <div>div19</div>
     <div>div20</div>
-    <!--div{div$}*60 : div1부터 div60까지.--> 
+    <!--(참고)div{div$}*60 : div1부터 div60까지.--> 
     <button id="changeBtn">바꾸기</button> <!--바꾸기 버튼 클릭시 모든 div(20개)의 innerText를 "쟈쟈쟌"으로 변경해보기-->
+    <button id="changeBtn2">바꾸기2</button>
     <script>
         document.querySelector("#changeBtn").addEventListener("click",function(){
+        //(참고)쿼리셀렉터는 가장 첫번째 참조값만 가지고 옴. 쿼리셀렉터 올은 다 가져옴(배열로).
+        //에드이벤트리스너는 앞에 달린 참조값(여기서는 #changeBtn) 에만 영향.     
             for(let i=0;i<20;i++) { //결국 for문이 정답이었음 ㅋㅋ;
                 i =Number(i);
                 document.querySelectorAll("div")[i].innerText="쟈쟈쟌?"; 
@@ -38,6 +41,16 @@
             }
        })
        
+       document.querySelector("#changeBtn2").addEventListener("click",function(){
+        let divs = document.querySelectorAll("div");   
+        //요소명이 div인 모든 문서 객체의 참조값을 배열로 얻어낸다.
+        for(let i=0;i<divs.length;i++){
+                //배열 사이즈 참조해서 반복문 작성
+                i =Number(i);
+                divs[i].innerText="쟈쟈쟌?"; 
+                console.log("반복문 "+(i+1)+"번 실행");
+            }
+       })
     </script>
 
     
