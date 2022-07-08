@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example10</title>
+</head>
+<body>
+    <select id="mySelect"> <!--form 요소의 value값-->
+        <option value="">선택</option>
+        <option value="0">가위</option>
+        <!--value값을 따로 지정하지 않으면 '가위'가 value로 들어간다-->
+        <option value="1">바위</option>
+        <option value="2">보</option>
+    </select>
+    <p id="my"></p>
+    <script>
+        document.querySelector("#mySelect").addEventListener("change",function(){
+            let value=document.querySelector("#mySelect").value;
+            //form요소의 값은 innerText가 아닌 value로 읽어온다.
+            document.querySelector("#my").innerText=value;
+        })
+    </script>
+</body>
+</html>

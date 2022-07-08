@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example09.html</title>
+</head>
+<body>
+    <button id="myBtn">눌러봐용</button>
+    <button id="myBtn2">이것도 눌러봐용</button>
+    <p id="result"></p>
+    <p id="result2"></p>
+    <script>
+        /*
+            1. 버튼을 눌렀을 때 0 또는 1 또는 2 의 숫자를 랜덤하게 얻어내어
+            얻어낸 숫자를 p 요소의 innerText로 출력하기
+            2. 버튼을 누르면 가위바위보 중 하나의 문자열을 랜덤출력.
+
+        */
+        document.querySelector("#myBtn").addEventListener("click",function(){
+            let ranNum=Math.floor(Math.random()*3);
+            console.log(ranNum); //확인
+            document.querySelector("#result").innerText=ranNum;
+       })
+
+        document.querySelector("#myBtn2").addEventListener("click",function(){
+            let data=["가위","바위","보"];
+            let ranNum=Math.floor(Math.random()*3);
+            document.querySelector("#result2").innerText=data[ranNum];
+            //else 문보다 훨씬 깔끔하다!
+            
+       })
+       
+    </script>
+</body>
+</html>
+
+나 컴
+0 <2 내가이김
+1 0 내가이김
+2 1 내가이김
+
+0 1 짐
+1 2 짐
+2 0 짐

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example07.html</title>
+    <style>
+        .kim{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            transition: all 0.5s ease-out;
+        }
+        .kim:hover{
+            cursor: pointer;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/03_tron_legacy.jpg" class="kim">
+    <script>
+        //상태값을 관리할 변수
+        let isLarge =false;
+        document.querySelectorAll(" .kim")[0].addEventListener("click", function(){
+            if(isLarge == false) {
+                document.querySelectorAll(" .kim")[0].style.width=150+"px";
+                document.querySelectorAll(" .kim")[0].style.height=150+"px";
+                //확대된 상태에서의 모양 코딩
+                isLarge=true;
+                return isLarge;
+            }
+            if(isLarge == true) {
+                document.querySelectorAll(" .kim")[0].style.width=100+"px";
+                document.querySelectorAll(" .kim")[0].style.height=100+"px";
+                //축소된 상태에서의 코딩
+                isLarge=false;
+                return isLarge;
+            }
+        })
+    </script>
+</body>
+</html>

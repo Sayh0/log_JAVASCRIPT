@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example10</title>
+</head>
+<body>
+    <h3>가위 바위 보 게임</h3>
+    <select id="mySelect">
+        <option value="">나 : 선택</option>
+        <option value="0">나 : 가위</option>
+        <!--value값을 따로 지정하지 않으면 '가위'가 value로 들어간다-->
+        <option value="1">나 : 바위</option>
+        <option value="2">나 : 보</option>
+    </select>
+    <strong>vs</strong>
+    <select id="comSelect">
+        <option value="">com : </option>
+        <option value="0">com : 가위</option>
+        <!--value값을 따로 지정하지 않으면 '가위'가 value로 들어간다-->
+        <option value="1">com : 바위</option>
+        <option value="2">com : 보</option>
+    </select>
+    <p id="result">결과는?</p>
+    <script>
+        document.querySelector("#mySelect").addEventListener("change",function(){
+            let myValue=document.querySelector("#mySelect").value;
+            let ranNum=Math.floor(Math.random()*3)
+            document.querySelector("#comSelect").value=ranNum;
+
+            if(myValue==0){
+                if(ranNum==0){document.querySelector("#result").innerText="비겼습니다";
+                } else if(ranNum==1){document.querySelector("#result").innerText="졌습니다";
+                } else {document.querySelector("#result").innerText="이겼습니다";}
+            } else if(myValue==1){
+                if(ranNum==0){document.querySelector("#result").innerText="이겼습니다";
+                } else if(ranNum==1){document.querySelector("#result").innerText="비겼습니다";
+                } else {document.querySelector("#result").innerText="졌습니다";}
+            } else if(ranNum==2){
+                if(ranNum==0){document.querySelector("#result").innerText="졌습니다";
+                } else if(ranNum==1){document.querySelector("#result").innerText="이겼습니다";
+                } else {document.querySelector("#result").innerText="비겼습니다";}
+            }
+        })
+    </script>
+</body>
+</html>

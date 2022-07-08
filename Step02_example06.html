@@ -10,6 +10,7 @@
             width: 100px;
             height: 100px;
             background-color: yellow;
+            transition: all 0.5s ease-out;
         }
         .kim:hover{
             cursor: pointer;
@@ -29,16 +30,16 @@
         */
         let imgs=document.querySelectorAll(" .kim");
         for(let i=0;i<imgs.length;i++){
-            let temp = 0;
+            let isLarge = false;
             imgs[i].addEventListener("click",function(){
-                if(temp == 0) {
+                if(isLarge == false) {
                 imgs[i].style.width=150+"px";
                 imgs[i].style.height=150+"px";
-                temp = 1;
-                } else {
+                isLarge = true;
+                } else { //누른거 다시 누르면 원위치
                 imgs[i].style.width=100+"px";
                 imgs[i].style.height=100+"px";
-                temp = 0;
+                isLarge = false;
                 }
                 // imas[i].addEventListener("",function(){
                 //     imgs[i].style.width=100+"px";
