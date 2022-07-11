@@ -1,0 +1,43 @@
+<!--! 쓰고 tap이 안 먹을 땐 ctrl+space 눌러라.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop.html</title>
+</head>
+<body>
+    <h1>반복문 테스트</h1>
+    <button onclick="clicked()">눌러보세요</button>
+    <button id="myBtn">눌러보세요2</button>
+    <script> 
+    document.querySelector("#myBtn").addEventListener("click", function(){
+    /*
+        버튼을 제어할 수 있는 참조값을 가져와서.버튼을 클릭했을 때 실행할 함수를 등록
+        string 타입으로 이벤트명을 작성하고, function타입으로 콜백함수(호출하지 않아도 적절 시점에 알아서 호출됨)를 전달.
+        (참고)자바스크립트의 특징) 함수를 만들어서 전달만 해 놓으면 적절한(진짜 다양해서 특정할 수 없음) 시점에 알아서 호출된다.
+    */
+        console.log("callback 함수가 호출됨.")
+    })
+    function clicked() {
+        console.log("clicked() 호출됨");
+    }
+
+    for(let i=0; i<5;i++){ 
+    /*
+    1.  let i=0은 for문 안에서만 사용하는 local variable 이고, 초기값은 0. for문 종료 시 i는 사라짐.
+    2.  i<5 라는 조건이 false가 될 때 까지 for문의 { }블럭은 반복 시행.
+    3.  i++은 증감연산자. i=i+1라는 의미. i를 1 증가시키고 다시 반복문 수행.
+    4.  i=5가 되면 조건문 false. 반복문 탈출.
+        
+    (참고)이렇게 순서대로 진행된 작업의 흐름을 스레드Thread라고 한다.
+    */
+        console.log(i); //0부터 4까지 콘솔창에 출력 후
+    }
+    console.log("javascript가 로딩 되었습니다."); //마지막에 메세지 출력.
+
+    </script>
+
+</body>
+</html>

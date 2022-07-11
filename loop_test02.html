@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop_test02.html</title>
+</head>
+<body>
+    <script>
+        //반복문은 배열과 함께 사용되는 경우가 많다.
+        let nums=[10,20,30,40,50];
+        for (let i=0;i<nums.length;i++){ //i는 제어변수라고 보통 부른다.
+            let temp=nums[i];            //i번째 방에 들어있는 item 참조하기.
+            //요즘은 var 대신 let을 쓴다. var은 지역변수를 선언해도 전역변수로 잡아버린다.
+        
+            console.log(temp);           //참조된 값 사용해서 콘솔에 출력.
+
+        }
+
+        let members=[
+            {num:1, name:"피카츄"},
+            {num:2, name:"라이츄"},
+            {num:3, name:"파이리"}
+        ];    //object가 item으로 들어있는 배열.
+        
+        for(let i=0;i<members.length;i++){
+            let temp=members[i];    //temp는 object type(배열 안에 object가 들어가 있기 때문).
+            console.log(temp.num+"|"+temp.name);    //참조된 members[i]의 num과 name 출력.
+        }
+
+    </script>
+</body>
+</html>
