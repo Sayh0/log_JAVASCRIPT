@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step18_form02</title>
+    <link rel="stylesheet" href="C:\acorn202206\visual_work\stylesheet\css\bootstrap-theme.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>회원 가입 폼</h1>
+                <form action="signup.jsp">
+                    <div class="mb-3">
+                        <label class="form-label" for="form-label">이메일</label>
+                        <input class="form-control" type="text" id="email" name="email">
+                        <div class="valid-feedback">사용할 수 있는 이메일입니다.</div>
+                        <div class="invalid-feedback">이메일 형식에 맞게 입력해 주세요.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="pwd">비밀번호</label>
+                        <input class="form-control" type="password" id="pwd" name="pwd">
+                        <div class="valid-feedback">사용할 수 있는 비밀번호입니다.</div>
+
+
+                    </div>
+                    <button class="btn btn-primary" type="submit">가입</button>
+                </form>
+                <script>
+                    document.querySelector("#email").addEventListener("input",function(){ //email에 input이벤트가 일어날 때 동작하는 함수
+                        //let inputEmail=document.querySelector("#email").value; 간단하게 받는 요소를 this로 쓸 수 있음.
+                        // 1. 입력한 이메일을 읽어온 다음
+                        let inputEmail=this.value;
+                        let index=inputEmail.indexOf("@");              
+                        // 2. 이메일 형식에 맞는지 확인하고(일단 간단히 @여부만 확인)
+                        console.log(index)
+                        if(index >= 0){ //@가 이메일 양식에 존재한다.
+                            this.classList="is-valid";
+                        } else { //그렇지 않으면 (-1) @는 없는 것으로 판정.
+                            this.classList="is-invalid";
+                        }
+                        //add랑 remove 없이 쓰니 bootstrap css가 동작을 안하네.
+                        //왜 그럴까? classList 다음엔 함수가 나와야 하는데 대입을 해버리면 폼이 꺠짐.
+                        if(inputEmail == "") {
+                            console.log(inputEmail)
+                            this.classList.remove("is-invalid");
+                        }
+                    })
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<!--email.classList.add("is-invalid") add와 remove로 입력시 상황에 맞는 아이콘을 띄우고 내려보자.-->
+<!-- 
+    반대되는 동작은 하나만 수행되도록 해야 함. is-valid랑 is-invalid 같은.
+    안그러면 충돌.
+-->

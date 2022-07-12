@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step19_flex.html</title>
+    <style>
+        .wrapper{
+            height: 500px; /* 높이를 강제로 지정한 회색 div */
+            background-color: #cecece;
+            display:flex;
+            /*
+                display:flex 사용하기.
+                어떤 속성을 줄 수 있는지?
+            */
+            /* row(default) | row-reverse | column / column-revers */
+            flex-direction:row; /* 오른쪽으로 정렬(row의 반대) */
+            flex-wrap:wrap-reverse;
+            justify-content: space-around; /* 남는 공간 어떻게 활용할래? 에 대한 요소 */
+        }
+        .item{
+            background-color: rgb(255, 221, 147);
+            border: 1px solid rgb(218, 39, 39);
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- div.item{item$}*5 -->
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+    </div>
+</body>
+</html>
