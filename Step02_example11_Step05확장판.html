@@ -31,9 +31,12 @@
             document.querySelector("#comSelect").value=ranNum;
 
             if(myValue==0){
-                if(ranNum==0){document.querySelector("#result").innerText="비겼습니다";
-                } else if(ranNum==1){document.querySelector("#result").innerText="졌습니다";
-                } else {document.querySelector("#result").innerText="이겼습니다";}
+                if(ranNum==0){
+                    document.querySelector("#result").innerText="비겼습니다";
+                } else if(ranNum==1){
+                    document.querySelector("#result").innerText="졌습니다";
+                } else {
+                    document.querySelector("#result").innerText="이겼습니다";} //같은 방식으로 다른 두 경우에 적용
             } else if(myValue==1){
                 if(ranNum==0){document.querySelector("#result").innerText="이겼습니다";
                 } else if(ranNum==1){document.querySelector("#result").innerText="비겼습니다";

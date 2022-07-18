@@ -28,7 +28,7 @@
         /*
             마우스를 클릭(click, mousedown)한 div의 innerText를 "clicked"로 변환
         */
-        let events=document.querySelectorAll(".box");
+        const events=document.querySelectorAll(".box");
         for(let i=0;i<5;i++){
             events[i].addEventListener("click", function(){
                 events[i].innerText="clicked";
