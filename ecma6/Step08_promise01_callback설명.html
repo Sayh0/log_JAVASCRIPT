@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step09_promise.html</title>
+</head>
+<body>
+    <script>
+        //메뉴를 주문하는 함수라고 가정하자. 이건 미리 준비된 함수. 페이지 동작 시점에서부터 작업
+        function order(menu, callback){
+            //메뉴를 준비하는 데 걸리는 시간이 랜덤하다고 가정.
+            const delay=Math.random()*5000+5000;//5000~10000 사이의 랜덤한 숫자.
+            setTimeout(function(){
+                console.log(menu+" 준비 되었습니다.");
+                callback(menu); //callback이 전달되면 적절한 시점에 호출이 된다.
+            }, delay)
+        }   
+        //난수 순서대로 로그가 뜨는 원리임. 주문 받은 순서가 아님. 랜덤하게 뜰 것임.
+        
+        order("커피", function(item){ //커피를 주문하고, 커피가 준비되면 호출되는 함수 전달. 우리가 사용하는, 조작하는 함수. let callback = function(itme){} 라고 생각하면 이해가 쉬울지도.
+             //커피가 준비되었을 때 하고싶은 작업은 여기다 하면 되는 것.
+             console.log(item+"맛있게 드세요!")
+             order("티라미수", function(item){  // 티라미수를 주문하고, 티라미수가 준비되면 호출되는 함수 전달하기.
+                //티라미수가 준비되었을 때 하고 싶은 작업을 여기서 하면 된다.
+                console.log(item+" 나왔습니다!")
+             }); // 이런 식으로 안으로 계속 파고들어감. 비동기작업!
+        }); 
+        order("샌드위치", function(item){});
+        order("아이스크림", function(item){});
+
+        /*
+        만약 순서대로 출력하고 싶다면?
+        order("커피", function(item){
+            order("샌드위치", function(item){
+                order("아이스크림", function(item){
+
+                });
+
+            });
+
+        });
+        자바스크립트특) 순서대로 하려고 하면 이렇게 안으로 안으로 들어감. 
+        '콜백지옥'이라고 한다. 가독성 매우 구림.
+        */
+
+
+        /*
+     order("커피", function(item){});
+    첫번재 인자로 스트링, 두번째 인자로 펑션타입.
+
+    const delay=Math.random()*5000+5000;//5000~10000 사이의 랜덤한 숫자.
+    작업에 시간이 걸린다고 가정
+
+    console.log(menu+"가 준비 되었습니다.");
+    callback(menu); //callback이 전달되면 적절한 시점에 호출이 된다.
+    작업이 완료되면 함수를 호출
+
+    function과 order는 둘 다 로딩시점에 ready 되지만. order는 바로 실행되지 않는다.
+    아직 콜을 안 했으니까.
+        */
+
+    </script>
+</body>
+</html>
