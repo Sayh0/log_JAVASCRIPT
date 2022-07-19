@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_object.html</title>
+</head>
+<body>
+    <input type="text" id="inputMsg" placeholder="문자열 입력">
+    <script>
+        let mem={num:1, name:"피카츄",addr:"상록숲"};
+        /*
+        let num=mem.num;
+        let name=mem.name;
+        위 두 줄을 줄여서 아래와 같이 쓸 수 있다.
+        */
+
+        //객체를 분해해서 변수에 할당하기(객체분해할당)
+        let {num, name}=mem;
+
+        let useMem=function({num, name}){
+            console.log(num+"|"+name);
+        }
+
+        useMem({num:2,name:"라이츄"}) // num에 2 대입, name에 라이츄 대입.
+        useMem(mem);
+
+        document.querySelector("#inputMsg").addEventListener("keydown",function(e){ //e는 이벤트오브젝트.
+            console.log(e); //전달된 e로 여러가지를 뱉는 것. 어떤 키가 눌렸는지 확인하려는것 역시 e를 확인해보면 된다.
+            console.log(e.KeyCode);//object의 KeyCode를 확인해서 키의 정보 획득 가능. {Keycode:x,...}
+        });
+
+        document.querySelector("#inputMsg").addEventListener("keydown",function(KeyCode){ //e는 이벤트오브젝트.
+            console.log(KeyCode);//객체분해할당 개념을 사용하면 이렇게 쓸 수도 있음.
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step05_function.html</title>
+</head>
+<body>
+    <script>
+        function showInfo(num=0, name, addr){ //num=0처럼 디폴트값도 지정할 수 있다.
+            console.log(num+"|"+name+"|"+addr);
+        }
+        showInfo(1, "피카츄", "상록숲");
+        showInfo(); //0|undefined|undefined. 비어 있는 게 아닌 undefined라는 데이터가 들어 있다.(자바에서는 또 다름!)
+        
+        function useFunc(...args){ // ...args는 빈 배열이다.
+            console.log(args);
+        }
+
+        useFunc();                  // []
+        useFunc(10);                // [10]
+        useFunc(10, 20, 30);        // [10, 20, 30]
+        useFunc(10, "yoon", true);  // [10, 'yoon', true]
+
+    </script>
+</body>
+</html>

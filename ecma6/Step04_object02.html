@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_object02.html</title>
+</head>
+<body>
+    <script>
+        let num=1;
+        let name="피카츄";
+        let isMan=true;
+
+        let mem={num:num, name:name, isMan:isMan};
+        console.log(mem) //{num: 1, name: '피카츄', isMan: true}
+
+        let mem2={num, name, isMan};
+        console.log(mem2) // mem 이랑 똑같이 나온다. 이렇게 저장하는 편한 방식도 있음.
+
+        let mem3={num:num, name:name, isMan:isMan, sing:function(){}};
+        console.log(mem3) //함수도 될까?
+
+        let mem4={num, name, isMan, sing(){}};
+        console.log(mem4) // 역시 가능
+        
+        
+        let a="num";
+        let b="name";   //object 의 key 값으로 사용할 문자열을 변수에 대입하고
+        let c="isMan";
+
+        let mem5={[a]:2, [b]:"라이츄", [c]:false}; // object의 key 값을 변수 안에 있는 값으로 결정할 수 있다.
+    </script>
+</body>
+</html>
