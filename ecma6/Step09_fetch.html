@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>친구 목록입니다.</h1>
+    <p>여기는 피카츄 서버입니다.</p>
     <button id="moreBtn">더보기</button>
     <ul id="friendList">
         <li>이브이</li>
@@ -19,6 +20,9 @@
         document.querySelector("#moreBtn").addEventListener("click",function(){
             fetch("friends.json")
             .then(function(response){//then이 나왔으니 promise 객체를 리턴하고 있다는 걸 알 수 있다.
+                //왜 프로미스로 받아오냐? 왜냐면 서버에서 이걸 받아오는데 시간이 얼마나 걸릴 줄 모르거든
+        //비동기로 받아올때까지 다른 일도 해야하지않겠음?
+        //fetch 되는 시점에 따라 자유자재로 데이터를 끌어올 수 있는 실력이 중요하겠지.
                 console.log(response); //응답객체. 응답이 잘 오고 있는지 확인용.
                 return response.json();
             }).then(function(data){
@@ -30,11 +34,21 @@
                     document.querySelector("#friendList").append(li);
                 }
             }); 
-        })
 
-        //왜 프로미스로 받아오냐? 왜냐면 서버에서 이걸 받아오는데 시간이 얼마나 걸릴 줄 모르거든
-        //비동기로 받아올때까지 다른 일도 해야하지않겠음?
-        //fetch 되는 시점에 따라 자유자재로 데이터를 끌어올 수 있는 실력이 중요하겠지.
+        })
+        //json형식 문자열
+        let str1=`
+                {"num":1, "name":"피카츄", "isMan":true}
+            `;
+        //이건그냥 오브젝트
+        let obj1={num:1, name:"피카츄", isMan:true};
+        //parse형식으로 json으로.
+        let obj2=JSON.parse(str1);
+        let str2=`
+        ["이상해폴", "리자몽","거북왕"]
+        `;
+        let arr2=JSON.parse(str2);
+        
     </script>
 </body>
 </html>
